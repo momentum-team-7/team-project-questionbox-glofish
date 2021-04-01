@@ -1,0 +1,19 @@
+.header {
+    color:#536b3f;
+}
+
+.side-nav-bar {
+    display: flex;
+    flex-wrap: wrap;
+    
+}
+
+body {
+    background: rgb(219, 219, 214);
+    padding: 30px;
+    font-family: 'Courier', Courier, monospace;
+  }
+
+.question-header {
+    color: #536b3f;
+}
