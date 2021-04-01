@@ -1,0 +1,12 @@
+{
+    "name":"Laura",
+    "username": "TinyLQ",
+    "password": "password123",
+    "questions": [
+        {
+            "question_title": "question_title",
+            "id": 1,
+            "timestamp": "2/3/2021"  
+        }
+    ]
+}
