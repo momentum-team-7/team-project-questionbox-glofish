@@ -1,4 +1,4 @@
-[
+const questions = [
         {
             "question_title": "title 1",
             "id": 1,
@@ -18,3 +18,5 @@
 
         }
     ]
+
+export default questions
