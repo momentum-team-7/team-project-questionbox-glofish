@@ -1,40 +1,48 @@
 import {useState} from 'react'
-import dataUser from './dataUser.json'
-import dataQuestions from './dataQuestions'
-import QuestionList from './components/QuestionList.js'
+import PageHome from './components/PageHome.js'
+import PageQuestion from './components/PageQuestion.js'
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import './App.css';
-import Answers from './components/Answers';
-import answerdata from './dataAnswers'
-import AnswerList from './components/Answerlist';
+
 
 
 function App () {
-  const [questions, setQuestions] = useState(dataQuestions);
-//   window.user = dataUser;
-//   window.questions = dataQuestions;
+
   return (
-    <div className='app-container'>
-      <h1 className='header'>Welcome to Traverse!</h1>
-      <h2 className='tagline-header'>A resource for travelers everywhere - ask, search, and save all of you  travel-related questions here!</h2>
-    
-    <nav className='nav-bar'>
-      <button>Login</button>
-      <button>Register</button>
-    </nav>
+      <Router>
+        <div className='app-container'>
+        <h1 className='header'>Welcome to Traverse!</h1>
+        <h2 className='tagline-header'>A resource for travelers everywhere - ask, view, and save all of your  travel-related questions here!</h2>
+        
+        <nav className='nav-bar'>
+        <button>Login</button>
+        <button>Register</button>
+        <button>Ask Question</button>
+        </nav>
 
-    <div className='side-nav-bar'>
-      <button>Profile</button>
-      <button>Users</button>
-      <button>Questions</button>
-    </div>
+        <div className='side-nav-bar'>
+           <ul>
+                <li><button>Profile</button></li>
+                <li><button>Users</button></li>
+                <li><button>Questions</button></li>
+            </ul>
+        </div>
+        <Switch>
+        <Route path='/questiondetail'>
+                <PageQuestion />
+            </Route>
+            <Route path='/cool'>
+                dfhgfhhfgh
+            </Route>
+            <Route path='/'>
+                <PageHome />
+            </Route>
 
-    <div>
-      <h1 className='question-header'>All Questions</h1>
-        <QuestionList questions={questions} />
-        <h2 className='answer-header'>Responses from Other Travelers</h2>
-        <AnswerList answerdata={answerdata} />
-    </div>
-    </div>
+        </Switch>
+
+       
+        </div>
+    </Router>
   )
 }
 
