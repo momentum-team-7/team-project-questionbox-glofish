@@ -4,7 +4,7 @@ const questions = [
             "id": 1,
             "timestamp": "2/3/2021",
             "username": "tinyLQ",
-            "question_description":"My boo and I just got married and we're trying to figure out where to go. Thoughts?",
+            "question_description":"description 1",
             "favorite": true
 
         },
