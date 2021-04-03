@@ -9,7 +9,7 @@ export default function Question({ question }) {
     <div>
       
       <h1>{question.title}</h1>
-      <Link to='/questiondetail'>See More</Link>
+      <Link to={`/questiondetail?id=${question.id}`}>See More</Link>
     </div>
   )
 }
