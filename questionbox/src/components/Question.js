@@ -7,8 +7,9 @@ export default function Question({ question }) {
   console.log(question)
   return (
     <div>
-      <Link to='/questiondetail'>Question</Link>
+      
       <h1>{question.title}</h1>
+      <Link to='/questiondetail'>See More</Link>
     </div>
   )
 }
