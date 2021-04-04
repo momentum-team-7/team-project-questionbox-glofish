@@ -21,10 +21,12 @@ function PageQuestion() {
             <QuestionDetail question={questionDetail} />
             <Link to='/'>Back</Link>
         </div>
+
+        
     )
 }
 
 
 export default PageQuestion
 
-// -1 used because api is not set up to get 1 question at a time so index & id do not line up
+// -1 used because api is not set up to get 1 question at a time so index & id do not line up. had to do a second get request because of the API is set up I think? params.get found on MDN to get the id out of the question in order to render just that question.
