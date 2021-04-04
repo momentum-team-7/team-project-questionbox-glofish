@@ -1,4 +1,5 @@
 import React from 'react'
+import AnswerList from './Answerlist'
 // import { useParams } from 'react-router-dom'
 
 export default function QuestionDetail({question}) {
@@ -6,9 +7,11 @@ export default function QuestionDetail({question}) {
     console.log(window.location.search)
     let params = new URLSearchParams(window.location.search);
     console.log(params.get('id'))
+    console.log(question)
    
     return (
-        <div>
+        <>
+        <div className='question-info'>
 
             <p>this is question detail</p>
             <h2>{question.title}</h2>
@@ -17,5 +20,12 @@ export default function QuestionDetail({question}) {
             <p>{question.id}</p>
 
         </div>
+
+        <div className='answer-list'>
+        <AnswerList
+            answers={question.answers}
+        />
+        </div>
+        </>
     )
 }

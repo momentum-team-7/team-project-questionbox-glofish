@@ -4,7 +4,7 @@ import axios from 'axios'
 import { Link } from 'react-router-dom'
 
 function PageQuestion() {
-    const [questionDetail, setQuestionDetail] = useState([])
+    const [questionDetail, setQuestionDetail] = useState({})
     useEffect(() => {
         console.log('api request')
         let params = new URLSearchParams(window.location.search);
@@ -13,6 +13,7 @@ function PageQuestion() {
           setQuestionDetail(response.data[params.get('id') - 1])
         })
       }, [])
+      console.log('pageQuestion', questionDetail)
     return (
         
         <div className='detail'>
