@@ -34,7 +34,6 @@ function App () {
         <div className='side-nav-bar'>
           <ul>
             <li><button>Profile</button></li>
-            <li><button>Users</button></li>
             <li><button>Questions</button></li>
           </ul>
         </div>
