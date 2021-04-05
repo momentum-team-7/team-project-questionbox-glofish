@@ -23,3 +23,5 @@ function PageHome() {
 
 
 export default PageHome
+
+// routed homepage that renders the question list from the API
