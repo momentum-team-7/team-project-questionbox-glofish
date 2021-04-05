@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 
 
-export default function showUserProfiles({userprofile, handleGoBack}) {
+export default function showUserProfiles({userprofile}) {
     //  const [grabProfile, setgrabProfile] = useState([])   
 return (
         <main>

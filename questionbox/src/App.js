@@ -3,6 +3,7 @@ import PageHome from './components/PageHome.js'
 import PageQuestion from './components/PageQuestion.js'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import './App.css';
+import ListofProfiles from './components/UserList.js'
 
 
 
@@ -36,6 +37,9 @@ function App () {
             </Route>
             <Route path='/'>
                 <PageHome />
+            </Route>
+            <Route path="/userprofile">
+                <ListofProfiles />
             </Route>
 
         </Switch>

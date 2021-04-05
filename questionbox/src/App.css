@@ -5,6 +5,7 @@
 .side-nav-bar {
     display: flex;
     flex-wrap: wrap;
+    list-style: none;
     
 }
 
