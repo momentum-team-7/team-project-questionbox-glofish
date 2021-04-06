@@ -1,19 +1,20 @@
 import React, { useState, useEffect } from 'react'
 import QuestionDetail from './QuestionDetail.js'
 import axios from 'axios'
-import { Link } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 
 function PageQuestion() {
     const [questionDetail, setQuestionDetail] = useState({})
+    const { id } = useParams()
     useEffect(() => {
-        console.log('api request')
+        
         let params = new URLSearchParams(window.location.search);
-        axios.get('http://swordtail.herokuapp.com/questions/?format=json').then((response) => {
-          console.log('response', response)
-          setQuestionDetail(response.data[params.get('id') - 1])
+        axios.get(`http://swordtail.herokuapp.com/questions/${id}`).then((response) => {
+          
+          setQuestionDetail(response.data)
         })
       }, [])
-      console.log('pageQuestion', questionDetail)
+      
     return (
         
         <div className='detail'>

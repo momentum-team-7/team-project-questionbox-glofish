@@ -3,7 +3,7 @@ import Question from './Question'
 import '../App.css'
 
 export default function QuestionList({ questions }) {
-    console.log(questions)
+    
      if (questions.length > 0) {
         return (
             <>

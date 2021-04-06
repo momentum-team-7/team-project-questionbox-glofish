@@ -4,7 +4,7 @@ import React from 'react'
 import '../App.css'
 
 export default function Answer({ answer }) {
-  console.log(answer)
+  
   return (
     <div>
       
