@@ -24,19 +24,17 @@ function App () {
               </Link>
             </li>
             <li>
+              <Link to='/profile'>
+                <button type='button'>Profile</button>
+              </Link>
+            </li>
+            <li>
               <Link to='/askquestion'>
                 <button type='button'>Ask!</button>
               </Link>
             </li>
           </ul>
         </nav>
-
-        <div className='side-nav-bar'>
-          <ul>
-            <li><button>Profile</button></li>
-            <li><button>Questions</button></li>
-          </ul>
-        </div>
         <Switch>
           <Route path='/questiondetail'>
             <PageQuestion />
