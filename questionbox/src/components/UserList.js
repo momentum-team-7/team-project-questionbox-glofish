@@ -8,7 +8,7 @@ export default function ListofProfiles({ userprofiles }) {
             {userprofiles.map((getProfile, index) => {
         return (
             <div key={index}>
-                username={getProfile.username}
+                getProfile.owner{getProfile.owner}
                 id={getProfile.id}
                 date_created={getProfile.date_created}
            </div> 

@@ -2,10 +2,9 @@ import {useState} from 'react'
 import PageHome from './components/PageHome.js'
 import PageQuestion from './components/PageQuestion.js'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import getUserProfiles from './userApis'
 import './App.css';
-import ListofProfiles from './components/UserList.js'
-
-
+import PageUser from './components/PageUser.js';
 
 function App () {
 
@@ -35,13 +34,12 @@ function App () {
             <Route path='/cool'>
                 dfhgfhhfgh
             </Route>
+            <Route path="/userprofile">
+                <PageUser id={2}/>
+            </Route>
             <Route path='/'>
                 <PageHome />
             </Route>
-            <Route path="/userprofile">
-                <ListofProfiles />
-            </Route>
-
         </Switch>
 
        

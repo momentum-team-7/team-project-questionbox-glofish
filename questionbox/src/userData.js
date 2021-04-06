@@ -1,5 +1,5 @@
 
-export const userprofiles = [
+export const userprofiles = 
     [
         {
             "id": 1,
@@ -19,7 +19,7 @@ export const userprofiles = [
                     "date_created": "2021-04-02T22:45:46.246361Z",
                     "likes": 5,
                     "answered": false,
-                    "answers": []
+                    "answers": ['Cheese pizza is cool!', 'I also like supreme pizza as well, but not really.']
                 },
                 {
                     "id": 2,
@@ -109,4 +109,3 @@ export const userprofiles = [
             "answers": []
         }
     ]
-]

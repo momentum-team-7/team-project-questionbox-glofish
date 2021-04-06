@@ -1,18 +1,25 @@
 import React, { useEffect, useState } from "react";
-import UserList from './components/UserList.js';
-import { Link } from 'react-router-dom'
+import { getUserProfile } from "../userApis.js";
+import { Link } from 'react-router-dom';
+import AnswerList from "./Answerlist.js";
 
-export default function UserPage() {
-const [userprofiles, setUserProfile] = useState([])
-
-useEffect(() = {
-    allUserProfiles().then((data) => setUserProfile(data))
-}, [])
-
+export default function PageUser({id}) {
+const [userProfile, setUserProfile] = useState({})
+console.log(id)
+    useEffect(() => {
+        
+        setUserProfile(getUserProfile(id)) 
+}, [id])
+console.log(userProfile.questions)
 return (
     <div className='User-profile'>
-        <h1>Username profile</h1>
-        <UserProfile userprofiles={userprofiles} />
+        <h1>PageUser</h1>
+        <p>{userProfile.id}</p>
+      <p>{userProfile.username}</p>
+        <p>{userProfile.date_created}</p>
+        {/* {userProfile.questions.map(question =>
+            <AnswerList answers={question.answers}/>
+            )} */}
         <Link to='/'>Go Back</Link>
     </div>
 )

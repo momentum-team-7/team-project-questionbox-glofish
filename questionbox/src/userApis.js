@@ -1,12 +1,16 @@
 import axios from 'axios'
+import { userprofiles } from './userData'
 
-export default function allUserProfiles() {
+export function allUserProfiles() {
     const userUrl = 'http://swordtail.herokuapp.com/users/'
     return axios.get(userUrl).then((data) => {
     console.log('data', data)
       return  data})
 }
 
-  // export const getUserProfiles = () => {
-  //   const grabProfile = 'https://opentdb.com/api_category.php?amount=10${userprofiles.id}'
-  //   return axios.get(grabProfile).then((response) => response.userprofiles)
+  export const getUserProfile = (id) => {
+    return userprofiles.find(profile => profile.id === id)
+    // const grabProfile = `http://swordtail.herokuapp.com/users/${id}`
+    // return axios.get(grabProfile).then((data) => data)
+  }
+
