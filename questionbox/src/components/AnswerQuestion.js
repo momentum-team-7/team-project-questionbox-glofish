@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import axios from 'axios'
 
-export default function AnswerQuestionForm ({question}) {
+export default function AnswerQuestion ({question, handleDone}) {
   const [body, setBody] = useState('')
   const [title, setTitle] = useState('')
   const token = '17bc521c4d39ed8a5794307ad5138daa85a161f9'
@@ -18,30 +18,35 @@ export default function AnswerQuestionForm ({question}) {
           question: question
         },
         {
-          headers: { Authorization: `Token ${token}`}
+          headers: { Authorization: `Token ${token}` }
         }
       )
+      .then((data) => {
+        handleDone(data.data)
+        console.log(data)
+        
+      })
   }
   return (
     <div>
       <h3>Got an Answer? Submit it here!👇 </h3>
       <form onSubmit={(event)=> handleSubmit(event)}>
-        <div className="answer-title">
-          <label htmlFor="answer-title"></label>
-            <input id="answer-title"
-              type="text"
-              placeholder='Title'
+        <div className='answer-title'>
+          <label htmlFor='answer-title'></label>
+          <input id='answer-title'
+            type='text'
+            placeholder='Title'
               onChange={(event) => setTitle(event.target.value)}>
               </input>
           </div>
-           <div className="answer-body">
-              <label htmlFor="answer-body"></label>
-               <textarea id="answer-body"
-              type="text" 
+           <div className='answer-body'>
+              <label htmlFor='answer-body'></label>
+               <textarea id='answer-body'
+              type='text'
                     placeholder='Start typing...'
               onChange={(event) => setBody(event.target.value)}>
               </textarea>
-               <button type="submit">Submit</button>
+               <button type='submit'>Submit</button>
           </div>
         </form>
     </div>   
@@ -51,3 +56,5 @@ export default function AnswerQuestionForm ({question}) {
         
     )
   }
+
+  // need to clear input field for answer & refresh page on click

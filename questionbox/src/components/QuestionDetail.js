@@ -1,13 +1,12 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import AnswerList from './Answerlist'
 import AnswerQuestion from './AnswerQuestion'
 // import { useParams } from 'react-router-dom'
 
-export default function QuestionDetail({ question }) {
-  console.log(window.location.search)
-  const params = new URLSearchParams(window.location.search)
-  console.log(params.get('id'))
-  console.log(question)
+export default function QuestionDetail ({ question }) {
+  const [answers, setAnswers] = useState(question.answers)
+  console.log(answers)
+  
   return (
     <>
       <div className='question-info'>
@@ -21,12 +20,21 @@ export default function QuestionDetail({ question }) {
       </div>
 
       <div className='answer-list'>
+
+        {answers && 
+      <>
         <AnswerList
-          answers={question.answers}
+          answers={answers}
         />
         <AnswerQuestion
           question={question.id}
+          handleDone={(newAnswer) => {
+            setAnswers([...answers, newAnswer])
+            }}
+          
         />
+      </>
+        }
       </div>
     </>
   )

@@ -1,11 +1,26 @@
-import {useState} from 'react'
+import React, { useState } from 'react'
 import PageHome from './components/PageHome.js'
 import PageQuestion from './components/PageQuestion.js'
 import AskPage from './components/AskPage.js'
-import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom'
+import Login from './components/Login.js'
+import useLocalStorageState from 'use-local-storage-state'
+import { BrowserRouter as Router, Route, Switch, Link, Redirect } from 'react-router-dom'
 import './App.css'
 
 function App () {
+  // const [username, setUsername] = useLocalStorageState('appUsername', '')
+  // const [token, setToken] = useLocalStorageState('appToken', '')
+
+  // function setAuth (username, token) {
+  //   setUsername(username)
+  //   setToken(token)
+  // }
+  // function logOut() {
+  //   setUsername(null)
+  //   setToken(null)
+  // }
+  // const isLoggedIn = username && token 
+
   return (
     <Router>
       <div className='app-container'>
@@ -14,7 +29,7 @@ function App () {
         <nav className='nav-bar'>
           <ul>
             <li>
-              <Link to='/Login'>
+              <Link to='/login'>
                 <button type='button'>Login</button>
               </Link>
             </li>
@@ -35,18 +50,27 @@ function App () {
             </li>
           </ul>
         </nav>
-        <Switch>
-          <Route path='/questiondetail'>
-            <PageQuestion />
-          </Route>
-          <Route path='/askquestion'>
-            <AskPage />
-          </Route>
+      <Switch>
+        {/* <Route>
+          <Login setAuth={setAuth} isLoggedIn={isLoggedIn} token={token} />
+        </Route> */}
+        <Route path='/questiondetail/:id'>
+          <PageQuestion />
+        </Route>
+        <Route path='/askquestion'>
+          <AskPage />
+        </Route>
+
+        {/* <Route path='/'>
+          {!isLoggedIn && <Redirect to='/login' />}
+          <Redirect to='/' />
+        </Route> */}
+
           <Route path='/'>
             <PageHome />
           </Route>
 
-        </Switch>
+      </Switch>
 
       </div>
     </Router>
