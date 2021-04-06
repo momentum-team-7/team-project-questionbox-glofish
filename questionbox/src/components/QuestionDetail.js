@@ -4,9 +4,16 @@ import AnswerQuestion from './AnswerQuestion'
 // import { useParams } from 'react-router-dom'
 
 export default function QuestionDetail ({ question }) {
-  const [answers, setAnswers] = useState(question.answers)
+  const [answers, setAnswers] = useState([])
   console.log(answers)
   
+  const handleDone = (newAnswers) => {
+    setAnswers([...answers, newAnswers])
+
+  }
+  useEffect(() => {
+    setAnswers(question.answers)
+  }, [question])
   return (
     <>
       <div className='question-info'>
@@ -21,20 +28,16 @@ export default function QuestionDetail ({ question }) {
 
       <div className='answer-list'>
 
-        {answers && 
-      <>
+       
         <AnswerList
           answers={answers}
         />
         <AnswerQuestion
           question={question.id}
-          handleDone={(newAnswer) => {
-            setAnswers([...answers, newAnswer])
-            }}
-          
+          handleDone={handleDone}
         />
-      </>
-        }
+  
+        
       </div>
     </>
   )

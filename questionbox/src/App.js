@@ -8,18 +8,18 @@ import { BrowserRouter as Router, Route, Switch, Link, Redirect } from 'react-ro
 import './App.css'
 
 function App () {
-  // const [username, setUsername] = useLocalStorageState('appUsername', '')
-  // const [token, setToken] = useLocalStorageState('appToken', '')
+  const [username, setUsername] = useLocalStorageState('appUsername', '')
+  const [token, setToken] = useLocalStorageState('appToken', '')
 
-  // function setAuth (username, token) {
-  //   setUsername(username)
-  //   setToken(token)
-  // }
-  // function logOut() {
-  //   setUsername(null)
-  //   setToken(null)
-  // }
-  // const isLoggedIn = username && token 
+  function setAuth (username, token) {
+    setUsername(username)
+    setToken(token)
+  }
+  function logOut() {
+    setUsername(null)
+    setToken(null)
+  }
+  const isLoggedIn = username && token 
 
   return (
     <Router>
@@ -51,9 +51,9 @@ function App () {
           </ul>
         </nav>
       <Switch>
-        {/* <Route>
+        <Route path='/login'>
           <Login setAuth={setAuth} isLoggedIn={isLoggedIn} token={token} />
-        </Route> */}
+        </Route>
         <Route path='/questiondetail/:id'>
           <PageQuestion />
         </Route>
@@ -61,14 +61,11 @@ function App () {
           <AskPage />
         </Route>
 
-        {/* <Route path='/'>
+        <Route path='/'>
           {!isLoggedIn && <Redirect to='/login' />}
-          <Redirect to='/' />
-        </Route> */}
+          <PageHome />
+        </Route>
 
-          <Route path='/'>
-            <PageHome />
-          </Route>
 
       </Switch>
 
