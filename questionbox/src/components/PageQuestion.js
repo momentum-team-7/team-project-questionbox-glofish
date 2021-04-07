@@ -3,7 +3,7 @@ import QuestionDetail from './QuestionDetail.js'
 import axios from 'axios'
 import { Link, useParams } from 'react-router-dom'
 
-function PageQuestion() {
+function PageQuestion({token}) {
     const [questionDetail, setQuestionDetail] = useState({})
     const { id } = useParams()
     useEffect(() => {
@@ -19,7 +19,7 @@ function PageQuestion() {
         
         <div className='detail'>
             <h1>Question</h1>
-            <QuestionDetail question={questionDetail} />
+            <QuestionDetail question={questionDetail} token={token} />
             <Link to='/'>Back</Link>
         </div>
 

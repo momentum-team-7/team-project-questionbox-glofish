@@ -21,16 +21,9 @@ export default function AskQuestionForm() {
           headers: { Authorization: `Token ${token}`},
         }
       )
-    // fetch('http://swordtail.herokuapp.com/questions/', {
-    //   method: 'POST',
-    //   title: JSON.stringify(title),
-    //   body: JSON.stringify(text, title),
-    //   headers: { Authorization: `Token ${token}` }
-    // }).then(function (response) {
-    //   console.log(response)
-    //   console.log(JSON.stringify(title))
-    //   return response.json();
     event.preventDefault()
+    setBody('')
+    setTitle('')
   }
   return (
     <>
@@ -40,6 +33,7 @@ export default function AskQuestionForm() {
               <label htmlFor="question-title"></label>
               <input id="question-title"
               type="text"
+              value={title}
               placeholder='Title'
               onChange={(event) => setTitle(event.target.value)}>
               </input>
@@ -48,6 +42,7 @@ export default function AskQuestionForm() {
               <label htmlFor="question-body"></label>
                <textarea id="question-body"
               type="text" 
+              value={body}
                     placeholder='Start typing...'
               onChange={(event) => setBody(event.target.value)}>
               </textarea>
