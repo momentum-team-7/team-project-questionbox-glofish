@@ -6,9 +6,9 @@ import axios from 'axios'
 function PageHome() {
     const [questions, setQuestions] = useState([])
     useEffect(() => {
-        console.log('api request')
+        
         axios.get('http://swordtail.herokuapp.com/questions/?format=json').then((response) => {
-          console.log('response', response)
+          
           setQuestions(response.data)
         })
       }, [])
@@ -23,3 +23,5 @@ function PageHome() {
 
 
 export default PageHome
+
+// routed homepage that renders the question list from the API
