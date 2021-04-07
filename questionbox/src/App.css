@@ -9,6 +9,11 @@
     
 }
 
+.user-profile {
+    list-style: none;
+}
+
+
 body {
     background: rgb(219, 219, 214);
     padding: 30px;

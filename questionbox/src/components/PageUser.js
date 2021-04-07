@@ -23,7 +23,7 @@ export default function PageUser({ id }) {
   console.log(userProfile);
   return userProfile ? (
     <>
-      <h1 className="user-profile">Your Profile</h1>
+      <h1 className="user-profile">{userProfile.username}'s Profile</h1>
       <li key={userProfile.id}>
         {/* Commment back in once date_created is resolved */}
         {/* <p>Member since:{userProfile.date_created}</p> */}
