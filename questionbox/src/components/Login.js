@@ -50,7 +50,7 @@ function Login ({ isLoggedIn, setAuth }) {
       Password
     </label>
     <input
-      type='text'
+      type='password'
       id='password'
       required
       value={password}
