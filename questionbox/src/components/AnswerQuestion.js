@@ -23,6 +23,8 @@ export default function AnswerQuestion ({question, handleDone, token}) {
       )
       .then((data) => {
         handleDone(data.data)
+      setBody('')
+      setTitle('')
         console.log(data)
         
       })
@@ -35,6 +37,7 @@ export default function AnswerQuestion ({question, handleDone, token}) {
           <label htmlFor='answer-title'></label>
           <input id='answer-title'
             type='text'
+            value={title}
             placeholder='Title'
               onChange={(event) => setTitle(event.target.value)}>
               </input>
@@ -42,6 +45,7 @@ export default function AnswerQuestion ({question, handleDone, token}) {
            <div className='answer-body'>
               <label htmlFor='answer-body'></label>
                <textarea id='answer-body'
+               value={body}
               type='text'
                     placeholder='Start typing...'
               onChange={(event) => setBody(event.target.value)}>

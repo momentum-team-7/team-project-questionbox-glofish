@@ -3,7 +3,7 @@ import AnswerList from './Answerlist'
 import AnswerQuestion from './AnswerQuestion'
 // import { useParams } from 'react-router-dom'
 
-export default function QuestionDetail ({ question }) {
+export default function QuestionDetail ({ question, token }) {
   const [answers, setAnswers] = useState([])
   console.log(answers)
   
@@ -35,6 +35,7 @@ export default function QuestionDetail ({ question }) {
         <AnswerQuestion
           question={question.id}
           handleDone={handleDone}
+          token={token}
         />
   
         
