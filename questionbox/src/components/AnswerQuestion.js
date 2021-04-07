@@ -1,10 +1,10 @@
 import React, { useState } from 'react'
 import axios from 'axios'
 
-export default function AnswerQuestion ({question, handleDone}) {
+export default function AnswerQuestion ({question, handleDone, token}) {
   const [body, setBody] = useState('')
   const [title, setTitle] = useState('')
-  const token = '17bc521c4d39ed8a5794307ad5138daa85a161f9'
+  // const token = '17bc521c4d39ed8a5794307ad5138daa85a161f9'
 
   const handleSubmit = (event) => {
     alert('Your Answer was submitted!')

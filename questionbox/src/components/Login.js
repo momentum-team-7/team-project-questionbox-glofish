@@ -14,7 +14,7 @@ function Login ({ isLoggedIn, setAuth }) {
   function handleSubmit (event) {
     event.preventDefault()
     axios
-      .post('http://swordtail.herokuapp.com/auth/token/login', {
+      .post('http://swordtail.herokuapp.com/auth/token/login/', {
         username: username,
         password: password
       })
