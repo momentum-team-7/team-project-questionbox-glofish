@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import axios from 'axios'
+import { Button } from 'react-bootstrap';
 
 export default function AskQuestionForm() {
   const [body, setBody] = useState('')
@@ -27,7 +28,7 @@ export default function AskQuestionForm() {
   }
   return (
     <>
-      <div>
+     <div className="form-group">
         <form onSubmit={(event)=> handleSubmit(event)}>
           <div className="question-title">
               <label htmlFor="question-title"></label>
@@ -46,11 +47,13 @@ export default function AskQuestionForm() {
                     placeholder='Start typing...'
               onChange={(event) => setBody(event.target.value)}>
               </textarea>
-               <button type="submit">Submit</button>
+               <br></br>
+               <Button type="submit">Submit</Button>
           </div>
         </form>
+        <br></br>
         <Link to='/'>
-          <button type='button'>Back to Home</button>
+          <Button type='button'>Back to Home</Button>
         </Link>
       </div>
     </>

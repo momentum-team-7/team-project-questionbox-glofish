@@ -6,9 +6,13 @@ import PageUser from './components/PageUser.js';
 import AskPage from './components/AskPage.js'
 import Login from './components/Login.js'
 import Register from './components/Register.js'
+import { Layout } from './components/Layout.js';
 import useLocalStorageState from 'use-local-storage-state'
 import { BrowserRouter as Router, Route, Switch, Link, Redirect } from 'react-router-dom'
 import './App.css'
+import { NavigationBar } from './components/NavigationBar.js'
+import { Button } from 'react-bootstrap';
+import 'bootstrap/dist/css/bootstrap.css';
 
 
 function App () {
@@ -28,37 +32,29 @@ function App () {
   return (
     
     <Router>
-      <div className='app-container'>
+      <NavigationBar />
         <h1 className='header'>Welcome to Traverse!</h1>
-        <h2 className='tagline-header'>A resource for travelers everywhere - ask, view, and save all of your   travel-related questions here!</h2>
+        <br></br>
+        <br></br>
+        <h3 className='tagline-header'>A resource for travelers everywhere - ask, view, and save all of your   travel-related questions here!</h3>
+      <Layout>
         <nav className='nav-bar'>
-          <ul>
-            <li>
-              <Link to='/profile'>
-                <button type='button'>Profile</button>
-              </Link>
-            </li>
-            <li>
-              <Link to='/askquestion'>
-                <button type='button'>Ask!</button>
-              </Link>
-            </li>
-          </ul>
+    
         </nav>
         <div className='top-nav-buttons'>
           {isLoggedIn ? (
             <>
-
+ 
             <Link to='/logOut' onClick={logOut}>
-              <button type='button'>Log Out</button></Link>
+              <Button variant="primary" size="sm">Log Out</Button></Link>
             </>  
               ) : (
                 <>
                   <Link to='/Register'>
-                    <button type='button'>Register</button>
+                    <Button type='Button'>Register</Button>
                   </Link>
                   <Link to='/Login'>
-                    <button type='button'>Log In</button>
+                    <Button type='Button'>Log In</Button>
                   </Link>
                 </>
               )}
@@ -76,16 +72,18 @@ function App () {
         <Route path='/askquestion'>
           <AskPage isLoggedIn={isLoggedIn} token={token} />
         </Route>
-        <Route path="/userprofile">
-                <PageUser id={2}/>
-            </Route>
+        <Route path='/userprofile'>
+          <PageUser isLoggedIn={isLoggedIn} token={token} />
+        </Route>
 
         <Route path='/'>
           {!isLoggedIn && <Redirect to='/login' />}
           <PageHome />
         </Route>
+
+
       </Switch>
-      </div>
+      </Layout>
 
     </Router>
   )

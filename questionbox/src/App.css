@@ -1,5 +1,44 @@
 .header {
-    color:#536b3f;
+    background-color: #F2F5EA;
+    color:#E75A7C;
+    font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 15px 20px;
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    
+}
+
+.traverse-hero {
+        
+    color: white;
+        background-image: url("https://images.unsplash.com/photo-1438109491414-7198515b166b?q=80&fm=jpg&s=cbdabf7a79c087a0b060670a6d79726c");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 250px;
+
+  }
+
+.main-title {
+    font-weight:bolder;
+    font-size: 36px;
+    align-items: center;
+    line-height: 1;
+    margin: 6px 0 6px 10px;
+    display: inline-block;
+    vertical-align: top;
+
+}
+
+.navbar-nav {
+    list-style: none;
+}
+
+.Questions-all {
+    font-size: 18px;
 }
 
 .side-nav-bar {

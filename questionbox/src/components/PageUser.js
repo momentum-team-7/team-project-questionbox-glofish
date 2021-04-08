@@ -35,6 +35,6 @@ export default function PageUser({ id }) {
       </li>
     </>
   ) : (
-    <h2>Loading</h2>
+    <p>Loading...</p>
   );
 }

@@ -14,9 +14,12 @@ function PageHome() {
       }, [])
     return (
         <div className='homepage'>
-            <h1>All Questions</h1>
+            <br></br>
+            <h1>Questions From Across the Transverse</h1>
+            <br></br>
+            <div className="Questions-all">
             <QuestionList questions={questions} />
-            
+            </div>
         </div>
     )
 }
